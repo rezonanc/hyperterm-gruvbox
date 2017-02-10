@@ -188,7 +188,7 @@ exports.decorateConfig = config => {
       }
       .tab_active {
         background-color: ${backgroundColorForActiveTab} !important;
-        border-left: 2px ${gruvboxOrangeColor} solid !important;
+        box-shadow: 2px 0 0 0 ${gruvboxOrangeColor} inset;
       }
     `,
     termCSS: `
