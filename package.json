@@ -1,0 +1,31 @@
+{
+  "name": "hyperterm-gruvbox",
+  "version": "0.0.1",
+  "description": "HyperTerm theme based on Gruvbox",
+  "license": "MIT",
+  "repository": "rezonanc/hyperterm-gruvbox",
+  "author": {
+    "name": "Edvinas Aleksejonokas",
+    "email": "rezonanc@gmail.com"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "hyperterm",
+    "hyperterm-theme",
+    "gruvbox",
+    "gruvbox-dark",
+    "gruvbox-light"
+  ],
+  "scripts": {
+    "lint": "standard ./**/*.js",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "color": "1.0.3"
+  },
+  "devDependencies": {
+    "standard": "^7.1.2"
+  }
+}
