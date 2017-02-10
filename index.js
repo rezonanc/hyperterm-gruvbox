@@ -170,12 +170,13 @@ exports.decorateConfig = config => {
   var terminalBackgroundColor = terminalBackgrounds[themeStyle][themeContrast]
   var backgroundColors = backgroundColorOptions[themeStyle]
   var backgroundColorForActiveTab = backgroundColors.option1
+  var cursorMixBlendMode = themeStyle == 'dark' ? 'lighten' : 'darken'
 
   return Object.assign({}, config, {
     foregroundColor: terminalForegroundColor,
     backgroundColor: terminalBackgroundColor,
     colors: terminalColors[themeStyle],
-    cursorColor: Color(gruvboxOrangeColor).alpha(0.7).string(),
+    cursorColor: gruvboxOrangeColor,
     css: `
       ${config.css || ''}
       .tabs_list,
@@ -188,6 +189,12 @@ exports.decorateConfig = config => {
       .tab_active {
         background-color: ${backgroundColorForActiveTab} !important;
         border-left: 2px ${gruvboxOrangeColor} solid !important;
+      }
+    `,
+    termCSS: `
+      ${config.termCSS || ''}
+      .cursor-node {
+        mix-blend-mode: ${cursorMixBlendMode};
       }
     `
   })
